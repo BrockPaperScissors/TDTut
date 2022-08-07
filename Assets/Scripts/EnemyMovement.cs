@@ -3,6 +3,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     public float speed = 10f;
+    public bool mDynamicPathing = false;
 
     private Transform target;
     private int wavepointIndex = 0;
@@ -14,12 +15,23 @@ public class EnemyMovement : MonoBehaviour
 
     void Update () 
     {
-        Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
-
-        if (Vector3.Distance(transform.position, target.position) <= 0.4f)
+        if (mDynamicPathing)
         {
-            GetNextWaypoint();
+            // recalc the path to the target destination
+            // NOTE - we can probably do this more efficiently than every Update loop... (HasTerrainUpdated?)
+            // NOTE - assuming the last endpoint is target destination
+
+            // Implement A*?  probably
+        }
+        else
+        {
+            Vector3 dir = target.position - transform.position;
+            transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
+
+            if (Vector3.Distance(transform.position, target.position) <= 0.4f)
+            {
+                GetNextWaypoint();
+            }
         }
     }
 
