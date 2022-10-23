@@ -4,6 +4,10 @@ using System.Collections.Generic;
 public class EnemyMovement : MonoBehaviour
 {
     public float speed = 10f;
+    public int health = 100;
+    public int moneyValue = 50;
+
+    public GameObject deathEffect;
     public bool mDynamicPathing = false;
 
     private Transform target;
@@ -41,6 +45,25 @@ public class EnemyMovement : MonoBehaviour
         //UNCOMMENT THIS FOR DYNAMIC PATHING
         //target2 = Waypoints.points[0];
         //target2.position = mDynamicWaypoints[0];
+    }
+
+    public void TakeDamage (int amount)
+    {
+        health -= amount;
+
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die () 
+    {
+        PlayerStats.Money += moneyValue;
+        
+        GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
+        Destroy(effect, 5f);
+        Destroy(gameObject);
     }
 
     void Update () 
@@ -83,7 +106,7 @@ public class EnemyMovement : MonoBehaviour
 
         if (wavepointIndex >= Waypoints.points.Length - 1)
         {
-            Destroy(gameObject);
+            EndPath();
             return;
         }
 
@@ -102,6 +125,12 @@ public class EnemyMovement : MonoBehaviour
 
         wavepointIndex2++;
         target2.position = mDynamicWaypoints[wavepointIndex2];
+    }
+
+    void EndPath()
+    {
+        PlayerStats.Lives--;
+        Destroy(gameObject);
     }
 
 }
