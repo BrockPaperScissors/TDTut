@@ -3,11 +3,14 @@ using System.Collections.Generic;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float speed = 10f;
-    public int health = 100;
+    public float startSpeed = 10f;
+    [HideInInspector]
+    public float speed;
+    public float health = 100f;
     public int moneyValue = 50;
-
     public GameObject deathEffect;
+
+
     public bool mDynamicPathing = false;
 
     private Transform target;
@@ -20,6 +23,7 @@ public class EnemyMovement : MonoBehaviour
 
     void Start () 
     {
+        speed = startSpeed;
         target = Waypoints.points[0];
 
         mManager = new PathFindingManager();
@@ -47,7 +51,7 @@ public class EnemyMovement : MonoBehaviour
         //target2.position = mDynamicWaypoints[0];
     }
 
-    public void TakeDamage (int amount)
+    public void TakeDamage (float amount)
     {
         health -= amount;
 
@@ -55,6 +59,11 @@ public class EnemyMovement : MonoBehaviour
         {
             Die();
         }
+    }
+
+    public void Slow (float amount)
+    {
+        speed = startSpeed * (1f - amount);
     }
 
     void Die () 
@@ -86,6 +95,8 @@ public class EnemyMovement : MonoBehaviour
             {
                 GetNextWaypoint2();
             }
+
+            speed = startSpeed;
 
         }
         else
