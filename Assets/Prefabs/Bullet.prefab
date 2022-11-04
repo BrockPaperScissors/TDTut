@@ -97,4 +97,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 70
+  standardDamage: 50
+  critChance: 0.2
+  critDamage: 2
+  explosionRadius: 0
   impactEffect: {fileID: 7191947637571290801, guid: 5e76c23d1da2b1848b943fcd38414950, type: 3}
+  isCrit: 0
