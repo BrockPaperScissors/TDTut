@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     public float speed = 70f;
     public int standardDamage = 50;
     public float critChance = .2f;
-    public float critDamage = 1.5f;
+    public float critDamageMultiplier = 1.5f;
     public float explosionRadius = 0f;
     public GameObject impactEffect;
     public bool isCrit = false;
@@ -76,6 +76,7 @@ public class Bullet : MonoBehaviour
         EnemyMovement e = enemy.GetComponent<EnemyMovement>();
 
         critRoll = Random.Range(0f, 1f);
+        // Debug.Log("Dealing Damage");
 
         if (critChance >= critRoll)
         {
@@ -85,14 +86,14 @@ public class Bullet : MonoBehaviour
 
         if (e != null)
         {
-            
-    
             if (isCrit)
             {
-                e.TakeDamage(standardDamage * critDamage);
+                e.TakeDamage(standardDamage * critDamageMultiplier);
+                // Debug.Log("is crit");
             }else 
             {
                 e.TakeDamage(standardDamage);
+                // Debug.Log("not crit");
             }
         }
     }
