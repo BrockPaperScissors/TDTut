@@ -35,10 +35,8 @@ public class WaveSpawner : MonoBehaviour
     IEnumerator SpawnWave ()
     {
         waveIndex++;
-        //Examples of wave logic
-        //numOfEnemies = waves[waveNumber].count;     --advanced
-        //numOfEnemies =  waveNumber * waveNumber + 1;
-        //numOfEnemies = waveNumber;                  --simple
+        PlayerStats.Rounds++;
+        
         for (int i = 0; i < waveIndex; i++)
         {
             SpawnEnemy();
