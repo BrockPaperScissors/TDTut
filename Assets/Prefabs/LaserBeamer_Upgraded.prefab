@@ -45,7 +45,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.61373144, b: 0.3254717, a: 1}
   m_Intensity: 3
-  m_Range: 10
+  m_Range: 15
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -120,7 +120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 387574856012000064}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 0.6, z: 0}
+  m_LocalPosition: {x: -0.05000019, y: -0.14157403, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 63.703358}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -156,7 +156,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 3e09cbea1fc2ed04dafaeeecdb61119f, type: 2}
-  - {fileID: 2100000, guid: dca84564b769fd541b9295c5cf285c3b, type: 2}
+  - {fileID: 2100000, guid: 7343671729bdc0445a95f62d83fb3faf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -202,7 +202,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2052925852847594687}
   m_LocalRotation: {x: -0, y: -0.68268657, z: -0, w: 0.73071146}
-  m_LocalPosition: {x: 0, y: 2.461574, z: 0}
+  m_LocalPosition: {x: -0.05, y: 1.72, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -526,9 +526,9 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     startSize:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 4
-      minScalar: 1
+      minMaxState: 3
+      scalar: 5
+      minScalar: 4
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -579,7 +579,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -632,7 +632,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeZ:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -5115,9 +5115,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 472b56dddf6839346b6f05343add17fa, type: 2}
-  - {fileID: 2100000, guid: 9edd35eada1a17c4aa621bf80d735893, type: 2}
-  - {fileID: 2100000, guid: f2973f610001e7944ae508183014d06e, type: 2}
+  - {fileID: 2100000, guid: c146b36c1bb7983448741b0394a82568, type: 2}
+  - {fileID: 2100000, guid: 46b391af16b42cf42a421b80edb1023d, type: 2}
+  - {fileID: 2100000, guid: bed6db6fad443ac41b99678cc9d0612a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5151,7 +5151,7 @@ GameObject:
   - component: {fileID: 1437050595277613107}
   - component: {fileID: 386400188003730313}
   m_Layer: 0
-  m_Name: LaserBeamer
+  m_Name: LaserBeamer_Upgraded
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5166,7 +5166,7 @@ Transform:
   m_GameObject: {fileID: 4987498814363278721}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1669611986984065289}
@@ -5187,12 +5187,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae0883f702ed94148a1f03875cb49aa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 20
+  range: 30
   bulletPrefab: {fileID: 0}
   fireRate: 1
   useLaser: 1
-  damageOverTime: 30
-  slowAmount: 0.5
+  damageOverTime: 45
+  slowAmount: 0.8
   lineRenderer: {fileID: 386400188003730313}
   impactEffect: {fileID: 2208159709284664652}
   impactLight: {fileID: 86296590114843794}
@@ -5273,7 +5273,7 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.55443513, g: 1, b: 0.11764705, a: 1}
+      key0: {r: 1, g: 0.8174014, b: 0.2783019, a: 1}
       key1: {r: 1, g: 0.26719296, b: 0.11764705, a: 1}
       key2: {r: 0.9528302, g: 0.5958921, b: 0.004494493, a: 1}
       key3: {r: 0, g: 0, b: 0, a: 1}
@@ -5281,16 +5281,16 @@ LineRenderer:
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 13493
-      ctime1: 29105
-      ctime2: 52043
+      ctime0: 37201
+      ctime1: 58403
+      ctime2: 59753
       ctime3: 0
       ctime4: 0
       ctime5: 0
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 39128
+      atime1: 47224
       atime2: 63029
       atime3: 63029
       atime4: 0
