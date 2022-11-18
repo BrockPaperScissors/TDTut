@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4485548473478859665}
   - component: {fileID: 3955855681726289283}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: Bullet_Upgraded
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3db96b68d7c983247a46ce9a3307a8e5, type: 2}
+  - {fileID: 2100000, guid: 22edf4b037db373479263ff964e6d80a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,9 +97,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 70
-  standardDamage: 50
-  critChance: 0.2
-  critDamage: 2
+  standardDamage: 75
+  critChance: 0.25
+  critDamageMultiplier: 2
   explosionRadius: 0
   impactEffect: {fileID: 7191947637571290801, guid: 5e76c23d1da2b1848b943fcd38414950, type: 3}
   isCrit: 0
