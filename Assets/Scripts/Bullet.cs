@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
     public float critDamageMultiplier = 1.5f;
     public float explosionRadius = 0f;
     public GameObject impactEffect;
-    public bool isCrit = false;
+    private bool isCrit = false;
     public float critRoll {get; private set;}
 
     public void Seek (Transform _target) 
@@ -90,7 +90,8 @@ public class Bullet : MonoBehaviour
             {
                 e.TakeDamage(standardDamage * critDamageMultiplier);
                 // Debug.Log("is crit");
-            }else 
+            }
+            else 
             {
                 e.TakeDamage(standardDamage);
                 // Debug.Log("not crit");
