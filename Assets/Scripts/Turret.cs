@@ -77,6 +77,7 @@ public class Turret : MonoBehaviour
                     lineRenderer.enabled = false;
                     impactEffect.Stop();
                     impactLight.enabled = false;
+                    targetEnemy.speed = targetEnemy.startSpeed;
                 }
             }
 
