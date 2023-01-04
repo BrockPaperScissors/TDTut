@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class EnemyMovement : MonoBehaviour
@@ -6,10 +7,13 @@ public class EnemyMovement : MonoBehaviour
     public float startSpeed = 10f;
     [HideInInspector]
     public float speed;
-    public float health = 100f;
+    public float startHealth = 100f;
+    private float health;
     public int moneyValue = 50;
     public GameObject deathEffect;
 
+[Header("Unity Stuff")]
+public Image healthBar;
 
     public bool mDynamicPathing = false;
 
@@ -24,6 +28,7 @@ public class EnemyMovement : MonoBehaviour
     void Start () 
     {
         speed = startSpeed;
+        health = startHealth;
         target = Waypoints.points[0];
 
         mManager = new PathFindingManager();
@@ -54,6 +59,8 @@ public class EnemyMovement : MonoBehaviour
     public void TakeDamage (float amount)
     {
         health -= amount;
+
+        healthBar.fillAmount = health / startHealth;
 
         if (health <= 0)
         {

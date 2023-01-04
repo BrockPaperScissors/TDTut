@@ -53,6 +53,8 @@ public class Bullet : MonoBehaviour
         }else 
         {  
             Damage(target);
+            Destroy(gameObject);
+            Debug.Log("hit");
         }
        
         Destroy(effectIns);
@@ -89,12 +91,12 @@ public class Bullet : MonoBehaviour
             if (isCrit)
             {
                 e.TakeDamage(standardDamage * critDamageMultiplier);
-                // Debug.Log("is crit");
+                Debug.Log("is crit");
             }
             else 
             {
                 e.TakeDamage(standardDamage);
-                // Debug.Log("not crit");
+                Debug.Log("not crit");
             }
         }
     }
