@@ -80,6 +80,7 @@ public Image healthBar;
         GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(effect, 5f);
         Destroy(gameObject);
+        WaveSpawner.EnemiesAlive--;
     }
 
     void Update () 
@@ -148,6 +149,7 @@ public Image healthBar;
     void EndPath()
     {
         PlayerStats.Lives--;
+        WaveSpawner.EnemiesAlive--;
         Destroy(gameObject);
     }
 
