@@ -8151,9 +8151,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb7e55aea6cd6f948896e23fc2b49867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 4110521629800451214, guid: 91b23562d9e04cb498992b0a003f7f46, type: 3}
+  waves:
+  - enemy: {fileID: 1842477381238283608, guid: 91b23562d9e04cb498992b0a003f7f46, type: 3}
+    count: 1
+    rate: 2
+  - enemy: {fileID: 1842477381238283608, guid: 91b23562d9e04cb498992b0a003f7f46, type: 3}
+    count: 2
+    rate: 2
+  - enemy: {fileID: 1842477381238283608, guid: 91b23562d9e04cb498992b0a003f7f46, type: 3}
+    count: 5
+    rate: 2
+  - enemy: {fileID: 1842477381238283608, guid: 23a7284b8f610344293b5965ac6c4c2b, type: 3}
+    count: 3
+    rate: 1
+  - enemy: {fileID: 1842477381238283608, guid: d00bcf9cbb0b9e44b8331b5106eb2ed4, type: 3}
+    count: 15
+    rate: 3
   spawnPoint: {fileID: 698863125}
-  timeBetweenWaves: 10
+  timeBetweenWaves: 3
   waveCountdownText: {fileID: 1996220285}
 --- !u!4 &794613546
 Transform:
@@ -8198,7 +8213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startMoney: 1000
-  startLives: 1
+  startLives: 10
 --- !u!114 &794613549
 MonoBehaviour:
   m_ObjectHideFlags: 0
