@@ -12,8 +12,10 @@ public class EnemyMovement : MonoBehaviour
     public int moneyValue = 50;
     public GameObject deathEffect;
 
-[Header("Unity Stuff")]
-public Image healthBar;
+    [Header("Unity Stuff")]
+    public Image healthBar;
+
+    private bool isDead = false;
 
     public bool mDynamicPathing = false;
 
@@ -62,7 +64,7 @@ public Image healthBar;
 
         healthBar.fillAmount = health / startHealth;
 
-        if (health <= 0)
+        if (health <= 0 && !isDead)
         {
             Die();
         }
@@ -75,6 +77,7 @@ public Image healthBar;
 
     void Die () 
     {
+        isDead = true;
         PlayerStats.Money += moneyValue;
         
         GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);

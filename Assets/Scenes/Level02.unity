@@ -8214,7 +8214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startMoney: 1000
-  startLives: 10
+  startLives: 5
 --- !u!114 &794613549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8228,9 +8228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 102908596}
-  nextLevel: Level02
-  levelToUnlock: 2
-  sceneFader: {fileID: 1054096487}
+  completeLevelUI: {fileID: 0}
 --- !u!114 &794613550
 MonoBehaviour:
   m_ObjectHideFlags: 0
